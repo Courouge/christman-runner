@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: christman-runner
-          image: harbor.homalab.com/christman/christman-runner:latest
+          image: ghcr.io/courouge/christman-runner:v1.0.0
           imagePullPolicy: Always
           ports:
             - containerPort: 80
@@ -48,5 +48,3 @@ spec:
           securityContext:
             runAsNonRoot: false
             readOnlyRootFilesystem: false
-      imagePullSecrets:
-        - name: harbor-registry-secret

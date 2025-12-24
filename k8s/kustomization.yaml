@@ -15,5 +15,5 @@ commonLabels:
   app.kubernetes.io/managed-by: argocd
 
 images:
-  - name: harbor.homalab.com/christman/christman-runner
-    newTag: latest
+  - name: ghcr.io/courouge/christman-runner
+    newTag: v1.0.0
