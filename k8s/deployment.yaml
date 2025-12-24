@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: christman-runner
+  namespace: christman-runner
+  labels:
+    app: christman-runner
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: christman-runner
+  template:
+    metadata:
+      labels:
+        app: christman-runner
+    spec:
+      containers:
+        - name: christman-runner
+          image: harbor.homalab.com/christman/christman-runner:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+              protocol: TCP
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "50m"
+            limits:
+              memory: "128Mi"
+              cpu: "100m"
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 80
+            initialDelaySeconds: 10
+            periodSeconds: 30
+            timeoutSeconds: 3
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 3
+            failureThreshold: 3
+          securityContext:
+            runAsNonRoot: false
+            readOnlyRootFilesystem: false
+      imagePullSecrets:
+        - name: harbor-registry-secret

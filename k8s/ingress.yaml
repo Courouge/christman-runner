@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: christman-runner
+  namespace: christman-runner
+  labels:
+    app: christman-runner
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  tls:
+    - hosts:
+        - christman.homalab.com
+      secretName: christman-runner-tls
+  rules:
+    - host: christman.homalab.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: christman-runner
+                port:
+                  number: 80

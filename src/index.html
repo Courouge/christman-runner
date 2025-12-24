@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎅 Santa Speed Runner - Christman Edition</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎅</text></svg>">
+</head>
+<body>
+    <div id="game-container">
+        <div id="menu">
+            <h1>🎅 Santa Speed Runner</h1>
+            <p class="subtitle">Aide le Père Noël à livrer tous les cadeaux!</p>
+            <div id="high-score">Meilleur Score: <span id="best-score">0</span></div>
+            <button id="start-btn">🎮 Jouer</button>
+            <div class="controls-info">
+                <p><strong>Contrôles:</strong></p>
+                <p>⬆️ ESPACE / CLIC - Sauter</p>
+                <p>⬇️ BAS - Glisser</p>
+            </div>
+        </div>
+        <div id="game-ui" class="hidden">
+            <div id="score-display">Score: <span id="score">0</span></div>
+            <div id="distance-display">Distance: <span id="distance">0</span>m</div>
+            <div id="gifts-display">🎁 <span id="gifts">0</span></div>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+        <div id="game-over" class="hidden">
+            <h2>Game Over!</h2>
+            <p>Score Final: <span id="final-score">0</span></p>
+            <p>Distance: <span id="final-distance">0</span>m</p>
+            <p>Cadeaux: <span id="final-gifts">0</span> 🎁</p>
+            <button id="restart-btn">🔄 Rejouer</button>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
