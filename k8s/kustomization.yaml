@@ -16,4 +16,4 @@ commonLabels:
 
 images:
   - name: ghcr.io/courouge/christman-runner
-    newTag: v1.0.0
+    newTag: v1.0.1

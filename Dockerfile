@@ -4,8 +4,8 @@ LABEL maintainer="christman-runner"
 LABEL version="1.0.0"
 LABEL description="Santa Speed Runner - A Christmas themed endless runner game"
 
-# Copy game files
-COPY src/ /usr/share/nginx/html/
+# Copy game files and set permissions
+COPY --chmod=644 src/ /usr/share/nginx/html/
 
 # Copy nginx configuration
 COPY nginx.conf /etc/nginx/conf.d/default.conf

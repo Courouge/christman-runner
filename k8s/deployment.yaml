@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: christman-runner
-          image: ghcr.io/courouge/christman-runner:v1.0.0
+          image: ghcr.io/courouge/christman-runner:v1.0.1
           imagePullPolicy: Always
           ports:
             - containerPort: 80
