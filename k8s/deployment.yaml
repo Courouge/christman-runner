@@ -48,3 +48,5 @@ spec:
           securityContext:
             runAsNonRoot: false
             readOnlyRootFilesystem: false
+      imagePullSecrets:
+        - name: ghcr-secret
