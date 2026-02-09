@@ -1,7 +1,7 @@
 FROM nginx:alpine
 
 LABEL maintainer="christman-runner"
-LABEL version="1.0.0"
+LABEL version="2.0.0"
 LABEL description="Santa Speed Runner - A Christmas themed endless runner game"
 
 # Copy game files and set permissions
