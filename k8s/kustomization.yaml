@@ -11,9 +11,9 @@ resources:
 
 commonLabels:
   app.kubernetes.io/name: christman-runner
-  app.kubernetes.io/version: "1.0.0"
+  app.kubernetes.io/version: "2.0.0"
   app.kubernetes.io/managed-by: argocd
 
 images:
   - name: ghcr.io/courouge/christman-runner
-    newTag: v1.0.1
+    newTag: v2.0.0
